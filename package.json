@@ -1,0 +1,29 @@
+{
+  "name": "alexsaves.github.io",
+  "version": "1.0.0",
+  "description": "Alexei White Profile Page",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://alexsaves@github.com/alexsaves/alexsaves.github.io.git"
+  },
+  "author": "Alexei White",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexsaves/alexsaves.github.io/issues"
+  },
+  "homepage": "https://github.com/alexsaves/alexsaves.github.io#readme",
+  "dependencies": {
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-router-redux": "^4.0.8",
+    "redux": "^4.0.0",
+    "watchify": "^3.11.0",
+    "webpack": "^4.12.0"
+  }
+}
