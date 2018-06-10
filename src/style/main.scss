@@ -52,6 +52,13 @@
       }
     }
   }
+  .main {
+    .main--content {
+      p {
+        margin-bottom: ($general_padding / 2);
+      }
+    }
+  }
 }
 
 @media (min-width:$high-tide) {
@@ -69,6 +76,12 @@
         width: 15em;
         border: 0;
         align: left;
+      }
+    }
+    .main {
+      padding-left: $sidebar_size;
+      .main--content {
+        padding: $general_padding;
       }
     }
   }
