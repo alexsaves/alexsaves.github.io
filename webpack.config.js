@@ -6,7 +6,7 @@ var paths = {
 };
 
 module.exports = {
-  entry: paths.APP_SRC + 'index.jsx',
+  entry: [paths.APP_SRC + 'index.jsx'],
   output: {
     path: path.resolve(__dirname, paths.DIST),
     filename: 'app.js'
