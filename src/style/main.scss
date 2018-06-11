@@ -11,6 +11,7 @@
       -moz-filter: grayscale(100%);
       -ms-filter: grayscale(100%);
       -o-filter: grayscale(100%);
+      margin-right: ($spacing_p * 2);
       cursor: pointer;
       &:hover {
         -webkit-filter: none;
@@ -30,10 +31,12 @@
     }
   }
   .sociallinks {
+    margin-bottom: $spacing_p;
     a {
       display: inline-block;
-      width: 3em;
-      height: 3em;
+      width: 2em;
+      height: 2em;
+      margin-right: ($spacing_p * 2);
       background-size: 100% 100%;
       &.sociallinks--li {
         background-image: url(/dist/assets/iconmonstr-linkedin-3.svg);
@@ -69,19 +72,45 @@
       width: $sidebar_size;
       height: 100%;
       background-color: $clr_greyback;
-      hr {
-        color: $clr_greenaccent;
-        background-color: $clr_greenaccent;
-        height: 0.25em;
-        width: 15em;
-        border: 0;
-        align: left;
+      .hero--content {
+        margin-top: ($general_padding * 1.5);
+        margin-left: $general_padding;
+        margin-right: $general_padding;
+        hr {
+          color: $clr_greenaccent;
+          background-color: $clr_greenaccent;
+          height: 0.25em;
+          width: 15em;
+          border: 0;
+          align: left;
+        }
+        h1 {
+          font-size: 2em;
+          font-weight: bold;
+          margin-bottom: ($spacing_p / 2);
+        }
+        h2 {
+          font-size: 1.2em;
+          color: $clr_greydark;
+          padding-bottom: $spacing_p;
+        }
       }
     }
     .main {
       padding-left: $sidebar_size;
       .main--content {
         padding: $general_padding;
+        .alexeiavatar {
+          width: 4.7em;
+          height: 5em;
+          background-size: 100% 100%;
+          display: block;
+          background-image: url(/dist/assets/alexeiwhite.svg);
+        }
+        p {
+          line-height: 1.3em;
+          color: $clr_greydark;
+        }
       }
     }
   }

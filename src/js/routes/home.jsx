@@ -74,8 +74,9 @@ class HomeComponent extends React.Component {
         </div>
         <div className="main">
           <div className="main--content">
+            <p className="alexeiavatar"></p>
             <p className="main--content-heading">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dignissim ipsum non
+              2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dignissim ipsum non
               sodales consequat. Morbi gravida tortor porta fringilla tincidunt. Etiam erat
               arcu, finibus id dolor in, efficitur dignissim ligula. Sed risus nisi, vehicula
               quis odio id, molestie congue eros. Aenean vehicula tellus vel enim molestie,
