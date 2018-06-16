@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
+import ReactWindowResizeListener from 'window-resize-listener-react';
 
 /**
 * Handles resetting the password
@@ -13,19 +14,43 @@ class HomeComponent extends React.Component {
   constructor(props) {
 
     super(props);
+    this.state = {
+      isShort: this.isFrameShort()
+    };
   }
 
   /**
  * Fires after the component renders
  */
-  componentDidMount() {}
+  componentDidMount() {
+    this.updateFrameSize();
+  }
+
+  /**
+   * Is the frame short?
+   */
+  isFrameShort() {
+    return window.innerHeight < 560;
+  }
+
+  /**
+   * Update the frame size
+   */
+  updateFrameSize() {
+    var isFrShort = this.isFrameShort();
+    if (isFrShort != this.state.isShort) {
+      this.setState({
+        isShort: isFrShort
+      });
+    }
+  }
 
   /**
  * Render the view
  */
   render() {
     return (
-      <div className="overall">
+      <div className={"overall " + (this.state.isShort ? "short" : "")}>
         <div className="hero">
           <div className="hero--content">
             <h1>Alexei White</h1>
@@ -76,47 +101,30 @@ class HomeComponent extends React.Component {
           <div className="main--content">
             <p className="alexeiavatar"></p>
             <p className="main--content-heading">
-              2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dignissim ipsum non
-              sodales consequat. Morbi gravida tortor porta fringilla tincidunt. Etiam erat
-              arcu, finibus id dolor in, efficitur dignissim ligula. Sed risus nisi, vehicula
-              quis odio id, molestie congue eros. Aenean vehicula tellus vel enim molestie,
-              eget suscipit nunc placerat.
+              Alexei is an experienced software engineering manager (and author!) with deep
+              technical skills who specializes in building high-performaning dev teams. I love
+              the web, and I <u>really</u> love JavaScript!
             </p>
             <p>
-              In euismod metus in ipsum commodo rhoncus. Quisque at est nec risus pellentesque
-              pharetra. Vivamus tincidunt magna quam, nec feugiat nisi faucibus quis. Nunc id
-              pellentesque ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et
-              ultrices posuere cubilia Curae; Morbi blandit, nunc nec imperdiet varius, nisl
-              purus rutrum urna, in sollicitudin sapien nunc at massa. Quisque suscipit tellus
-              ac ligula tristique rhoncus. Sed tempus lacinia erat id pellentesque. Vivamus
-              sed varius elit.
+              Over the past few years, I've been <a target="_blank" href="https://www.foresee.com"> designing web and mobile SDK's</a>
+              for studying visitor behavior on websites and mobile apps. I also ran (with my cofounder) a startup
+              for several years, trying to engage people at conferences through real-time
+              analysis of textual data from surveys and Twitter - and we did events all over
+              the US and Canada.
             </p>
             <p>
-              Phasellus a metus in dui facilisis consequat non sed est. Integer eleifend augue
-              et neque porta lacinia. Praesent iaculis pulvinar tincidunt. Vivamus mattis eu
-              elit vitae sodales. Integer lorem leo, faucibus at neque vitae, gravida luctus
-              neque. Donec ac magna placerat enim ullamcorper iaculis sed non tellus. Aenean
-              imperdiet gravida varius.
+              <div class="arrow--p"></div>
+              I wrote a couple books about JavaScript which you'll find over here - although these days I'm a little more interested in building things than writing about building them :).
             </p>
             <p>
-              Proin volutpat aliquet est, at tempus enim cursus fermentum. Mauris quis felis
-              hendrerit, egestas ex vitae, ullamcorper nulla. Praesent nisl libero, euismod ac
-              ligula eu, cursus auctor augue. In euismod urna eget semper semper. Vivamus
-              suscipit venenatis ex malesuada aliquet. Ut non fringilla velit. Sed eget rutrum
-              quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-              ac turpis egestas. Ut nec tincidunt ligula. Praesent quis leo tempus, elementum
-              nulla eget, efficitur sem.
+              I'm currently based in the Bay Area, but originally from Vancouver, Canada.
             </p>
             <p>
-              Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et
-              ultrices posuere cubilia Curae; Aliquam sed arcu venenatis elit congue gravida.
-              Quisque sed ligula vel tortor blandit tempus. Quisque id porta lorem. Quisque
-              aliquam eleifend quam, ac sagittis sem sodales eu. Duis porttitor molestie
-              augue, eu cursus est placerat vel. Curabitur vitae ipsum et risus accumsan
-              tincidunt. Curabitur sit amet libero sem. Nunc pellentesque suscipit auctor.
+              Here are some recent O/S contributions:
             </p>
           </div>
         </div>
+        <ReactWindowResizeListener onResize={this.updateFrameSize.bind(this)} />
       </div>
     );
   }

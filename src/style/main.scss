@@ -1,17 +1,19 @@
 @import "mixins";
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,400');
+
 .app {
   .pubs {
     a {
       display: inline-block;
       width: 5em;
-      height: 6em;
+      height: 6.5em;
       background-size: 100% 100%;
       filter: none;
       -webkit-filter: grayscale(100%);
       -moz-filter: grayscale(100%);
       -ms-filter: grayscale(100%);
       -o-filter: grayscale(100%);
-      margin-right: ($spacing_p * 2);
+      margin-right: $hero_spacing;
       cursor: pointer;
       &:hover {
         -webkit-filter: none;
@@ -31,12 +33,12 @@
     }
   }
   .sociallinks {
-    margin-bottom: $spacing_p;
+    margin-bottom: $hero_spacing;
     a {
       display: inline-block;
       width: 2em;
       height: 2em;
-      margin-right: ($spacing_p * 2);
+      margin-right: $hero_spacing;
       background-size: 100% 100%;
       &.sociallinks--li {
         background-image: url(/dist/assets/iconmonstr-linkedin-3.svg);
@@ -67,15 +69,25 @@
 @media (min-width:$high-tide) {
   .app {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    .short .hero {
+      background-image: none;
+    }
     .hero {
       position: fixed;
       width: $sidebar_size;
       height: 100%;
       background-color: $clr_greyback;
+      background-image: url('/dist/assets/comps.svg');
+      background-repeat: no-repeat;
+      background-position: bottom center;
+      background-size: 33em 10em;   
       .hero--content {
         margin-top: ($general_padding * 1.5);
         margin-left: $general_padding;
         margin-right: $general_padding;
+        .sociallinks {
+          margin-top: $hero_spacing;
+        }
         hr {
           color: $clr_greenaccent;
           background-color: $clr_greenaccent;
@@ -85,9 +97,10 @@
           align: left;
         }
         h1 {
-          font-size: 2em;
+          font-size: 3em;
           font-weight: bold;
           margin-bottom: ($spacing_p / 2);
+          font-family: 'Merriweather', serif;
         }
         h2 {
           font-size: 1.2em;
@@ -108,8 +121,27 @@
           background-image: url(/dist/assets/alexeiwhite.svg);
         }
         p {
-          line-height: 1.3em;
+          line-height: 1.5em;
           color: $clr_greydark;
+          font-family: 'Merriweather', serif;
+          font-weight: 300;
+          color: $clr_lighttext;
+          position: relative;
+          &.main--content-heading {
+            color: #000;
+            font-size: 1.4em;
+            margin-bottom: 1.5em;
+          }
+          .arrow--p {
+            background-image: url(/dist/assets/arrow.svg);
+            display: block;
+            width: 7em;
+            height: 3em;
+            background-size: 100% 100%;
+            position: absolute;
+            left: -7em;
+            top: 0em;
+          }
         }
       }
     }
