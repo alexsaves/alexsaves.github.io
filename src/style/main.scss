@@ -1,16 +1,19 @@
 @import "mixins";
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,400');
+
 .app {
   .pubs {
     a {
       display: inline-block;
       width: 5em;
-      height: 6em;
+      height: 6.5em;
       background-size: 100% 100%;
       filter: none;
       -webkit-filter: grayscale(100%);
       -moz-filter: grayscale(100%);
       -ms-filter: grayscale(100%);
       -o-filter: grayscale(100%);
+      margin-right: $hero_spacing;
       cursor: pointer;
       &:hover {
         -webkit-filter: none;
@@ -30,10 +33,12 @@
     }
   }
   .sociallinks {
+    margin-bottom: $hero_spacing;
     a {
       display: inline-block;
-      width: 3em;
-      height: 3em;
+      width: 2em;
+      height: 2em;
+      margin-right: $hero_spacing;
       background-size: 100% 100%;
       &.sociallinks--li {
         background-image: url(/dist/assets/iconmonstr-linkedin-3.svg);
@@ -52,23 +57,137 @@
       }
     }
   }
+  .main {
+    .main--content {
+      p, div.p {
+        margin-bottom: ($general_padding / 2);
+      }
+      .project--badge {
+        display: inline-block;
+        width: 50%;
+        max-width: 20em;
+        text-decoration: none;
+        padding-right: 1em;
+        padding-bottom: 1em;
+        box-sizing: border-box;
+        .project--badge-interior {
+          border: 1px solid $clr_lightborder;
+          border-radius: 4px;
+          text-align: center;
+          padding: 0.5em;
+          &:hover {
+            background-color: $clr_lightborder;
+            .project--badge-tech {
+              span {
+                background-color: #fff;
+              }
+            }
+          }
+          .project--badge-name {
+            color: $clr_greenaccent;
+            font-weight: bold;
+          }
+          .project--badge-desc {
+            color: $clr_greydark;
+            font-family: $san_serif_font;
+            font-size: 0.8em;
+            line-height: 1.6em;
+          }
+          .project--badge-tech {
+            margin-top: 0.2em;
+            margin-bottom: 0.2em;
+            span {
+              font-family: $san_serif_font;
+              color: $clr_greenaccent;
+              background-color: $clr_lightborder;
+              border-radius: 5px;
+              padding: 0.2em;
+              margin-right: 0.2em;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (min-width:$high-tide) {
   .app {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: $san_serif_font;
+    .short .hero {
+      background-image: none;
+    }
     .hero {
       position: fixed;
       width: $sidebar_size;
       height: 100%;
       background-color: $clr_greyback;
-      hr {
-        color: $clr_greenaccent;
-        background-color: $clr_greenaccent;
-        height: 0.25em;
-        width: 15em;
-        border: 0;
-        align: left;
+      background-image: url('/dist/assets/comps.svg');
+      background-repeat: no-repeat;
+      background-position: bottom center;
+      background-size: 33em 10em;   
+      .hero--content {
+        margin-top: ($general_padding * 1.5);
+        margin-left: $general_padding;
+        margin-right: $general_padding;
+        .sociallinks {
+          margin-top: $hero_spacing;
+        }
+        hr {
+          color: $clr_greenaccent;
+          background-color: $clr_greenaccent;
+          height: 0.25em;
+          width: 15em;
+          border: 0;
+          align: left;
+        }
+        h1 {
+          font-size: 3em;
+          font-weight: bold;
+          margin-bottom: ($spacing_p / 2);
+          font-family: 'Merriweather', serif;
+        }
+        h2 {
+          font-size: 1.2em;
+          color: $clr_greydark;
+          padding-bottom: $spacing_p;
+        }
+      }
+    }
+    .main {
+      padding-left: $sidebar_size;
+      .main--content {
+        padding: $general_padding;
+        .alexeiavatar {
+          width: 4.7em;
+          height: 5em;
+          background-size: 100% 100%;
+          display: block;
+          background-image: url(/dist/assets/alexeiwhite.svg);
+        }
+        p, div.p {
+          line-height: 1.5em;
+          color: $clr_greydark;
+          font-family: 'Merriweather', serif;
+          font-weight: 300;
+          color: $clr_lighttext;
+          position: relative;
+          &.main--content-heading {
+            color: #000;
+            font-size: 1.4em;
+            margin-bottom: 1.5em;
+          }
+          .arrow--p {
+            background-image: url(/dist/assets/arrow.svg);
+            display: block;
+            width: 7em;
+            height: 3em;
+            background-size: 100% 100%;
+            position: absolute;
+            left: -7em;
+            top: 0em;
+          }
+        }
       }
     }
   }
