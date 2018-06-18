@@ -282,3 +282,36 @@
     }
   }
 }
+
+// Wide break point
+@media (max-width:420px) {
+  .app {
+    padding: ($general_padding / 2) !important;
+    .design--space {
+      display: none !important;
+    }
+    .hero--lowtide {
+      text-align: center;
+      .sociallinks {
+        float: none;
+        a {
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+      .alexei--avatar {
+        display: inline-block;
+        width: 4em;
+        height: 4em;
+        margin-top: 1.5em;
+      }
+    }
+    .hero--content h1 {
+      padding-top: 1em;
+    }
+    .main--content-heading {
+      text-align: center;
+    }
+  }
+}
