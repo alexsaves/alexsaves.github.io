@@ -320,5 +320,17 @@
     .main--content-heading {
       text-align: center;
     }
+    .main {
+      .project--badge-interior {
+        .project--badge-tech {
+          span {
+            font-size: 0.8em !important;
+          }
+        }
+        .project--badge-desc {
+          font-size: 0.7em !important;
+        }
+      }
+    }
   }
 }
