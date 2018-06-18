@@ -56,7 +56,7 @@ class HomeComponent extends React.Component {
         tech: ["NodeJS", "C++", "gyp"]
       }, {
         name: "loadtest-webui",
-        desc: "A web front-end for load testing. Perfect for running on Elastic Beanstalk.",
+        desc: "Front-end for load testing built on Alex Fernandez loadtest.",
         link: "https://github.com/alexsaves/loadtest-webui",
         tech: ["NodeJS", "Load Testing", "AWS"]
       }, {
@@ -100,7 +100,7 @@ class HomeComponent extends React.Component {
         name: "bity-promise",
         desc: "Super simple promises (with timeouts!) for Node",
         link: "https://github.com/alexsaves/bity-promise",
-        tech: ["NodeJS", "Promises", "Concurrency"]
+        tech: ["Async", "Proms", "Conc."]
       }, {
         name: "gulp-jsonp",
         desc: "JSONP Wrapper for Gulp for packaging JavaScript modules",
@@ -108,12 +108,14 @@ class HomeComponent extends React.Component {
         tech: ["NodeJS", "JSONP"]
       }, {
         name: "handydevserver",
-        desc: "A simple web server with handy features, fake latency, and hooks for test environments",
+        desc: "A simple web server with handy features, fake latency, and hooks for test enviro" +
+            "nments",
         link: "https://github.com/alexsaves/handydevserver",
         tech: ["NodeJS", "Testing"]
       }, {
         name: "CefGlueHeadless",
-        desc: "A fully headless client for CefGlue/3 in C# and async-await useful for automation",
+        desc: "A fully headless client for CefGlue/3 in C# and async-await useful for automatio" +
+            "n",
         link: "https://github.com/alexsaves/CefGlueHeadless",
         tech: ["C#", "CEF", "Chrome"]
       }
@@ -123,6 +125,54 @@ class HomeComponent extends React.Component {
         className={"overall " + (this.state.isShort
         ? "short"
         : "")}>
+        <div className="hero--lowtide">
+          <p className="sociallinks">
+            <a
+              href="https://www.linkedin.com/in/alexeiwhite/"
+              target="_blank"
+              className="sociallinks--li"></a>
+            <a
+              href="https://twitter.com/AlexeiRWhite"
+              target="_blank"
+              className="sociallinks--tw"></a>
+            <a
+              href="https://github.com/alexsaves"
+              target="_blank"
+              className="sociallinks--gh"></a>
+            <a
+              href="https://stackoverflow.com/users/381458/whitehawk"
+              target="_blank"
+              className="sociallinks--so"></a>
+            <a
+              href="mailto:alexei.white@gmail.com"
+              target="_blank"
+              className="sociallinks--em"></a>
+          </p>
+          <div className="alexei--avatar"></div>
+          <div className="hero--content">
+            <h1>Alexei White</h1>
+            <h2>Full-stack software developer, leader, and author</h2>
+            <div className="pubs">
+              <a
+                href="https://www.amazon.com/JavaScript-Programmers-Reference-Alexei-White/dp/0470344725"
+                target="_blank"
+                className="pubs--jsr"
+                title="JavaScript Programmers Reference - Wrox (Wiley)"></a>
+              <a
+                href="https://www.amazon.com/Enterprise-AJAX-Strategies-Performance-Applications/dp/0132242060"
+                target="_blank"
+                className="pubs--ajax"
+                title="Enterprise Ajax - Pearson"></a>
+              <a
+                href="https://www.amazon.com/Enterprise-Ajax-LiveLessons-Video-Training/dp/0137132603"
+                target="_blank"
+                className="pubs--ajaxaudio"
+                title="Enterprise Ajax Audio LiveLessons - Pearson"></a>
+            </div>
+            <div className="design--space">
+            </div>
+          </div>
+        </div>
         <div className="hero">
           <div className="hero--content">
             <h1>Alexei White</h1>
@@ -175,19 +225,24 @@ class HomeComponent extends React.Component {
             <p className="main--content-heading">
               Alexei is an experienced software engineering manager (and author!) with deep
               technical skills who specializes in building high-performaning dev teams. I love
-              the web, building end-to-end applications, and I &nbsp;<u>really</u>&nbsp; love JavaScript!
+              the web, building end-to-end applications, and I <u>really</u> love JavaScript!
             </p>
             <p>
-              Over the past few years, I've been &nbsp;<a target="_blank" href="https://www.foresee.com">
-                designing web and mobile SDK's</a>&nbsp; for studying visitor behavior on
-websites and mobile apps. I also ran (with my cofounder) a startup for several
-years, trying to engage people at conferences through real-time analysis of
-textual data from surveys and Twitter - and we did events all over the US and
-Canada.
+              Over the past few years, I've been <a target="_blank" href="https://www.foresee.com">
+                designing web and mobile SDK's</a> for studying visitor behavior on websites and mobile apps. I also ran (with my
+              cofounder) a startup for several years, trying to engage people at conferences
+              through real-time analysis of textual data from surveys and Twitter - and we did
+              events all over the US and Canada.
             </p>
-            <div className="p">
+            <div className="p wide">
               <div className="arrow--p"></div>
               I wrote a couple books about JavaScript which you'll find over here - although
+              these days I'm a little more interested in building things than writing about
+              building them :).
+            </div>
+            <div className="p short">
+              <div className="arrow--p"></div>
+              I wrote a couple books about JavaScript - although
               these days I'm a little more interested in building things than writing about
               building them :).
             </div>
@@ -198,7 +253,9 @@ Canada.
               Here are some recent O/S contributions - click to explore:
             </p>
             <div className="p projects--area">
-            {projects.map((pj) => { return <ProjectBadge key={pj.name} {...pj} />;})}
+              {projects.map((pj) => {
+                return <ProjectBadge key={pj.name} {...pj}/>;
+              })}
             </div>
           </div>
         </div>

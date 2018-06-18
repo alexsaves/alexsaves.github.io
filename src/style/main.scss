@@ -1,7 +1,7 @@
 @import "mixins";
 @import url('https://fonts.googleapis.com/css?family=Merriweather:300,400');
-
 .app {
+  font-family: $san_serif_font;
   .pubs {
     a {
       display: inline-block;
@@ -59,7 +59,8 @@
   }
   .main {
     .main--content {
-      p, div.p {
+      p,
+      div.p {
         margin-bottom: ($general_padding / 2);
       }
       .project--badge {
@@ -111,9 +112,12 @@
   }
 }
 
+// Wide break point
 @media (min-width:$high-tide) {
   .app {
-    font-family: $san_serif_font;
+    .hero--lowtide {
+      display: none;
+    }
     .short .hero {
       background-image: none;
     }
@@ -125,7 +129,7 @@
       background-image: url('/dist/assets/comps.svg');
       background-repeat: no-repeat;
       background-position: bottom center;
-      background-size: 33em 10em;   
+      background-size: 33em 10em;
       .hero--content {
         margin-top: ($general_padding * 1.5);
         margin-left: $general_padding;
@@ -145,7 +149,7 @@
           font-size: 3em;
           font-weight: bold;
           margin-bottom: ($spacing_p / 2);
-          font-family: 'Merriweather', serif;
+          font-family: $serif_font;
         }
         h2 {
           font-size: 1.2em;
@@ -157,6 +161,9 @@
     .main {
       padding-left: $sidebar_size;
       .main--content {
+        .short {
+          display: none;
+        }
         padding: $general_padding;
         .alexeiavatar {
           width: 4.7em;
@@ -165,10 +172,11 @@
           display: block;
           background-image: url(/dist/assets/alexeiwhite.svg);
         }
-        p, div.p {
+        p,
+        div.p {
           line-height: 1.5em;
           color: $clr_greydark;
-          font-family: 'Merriweather', serif;
+          font-family: $serif_font;
           font-weight: 300;
           color: $clr_lighttext;
           position: relative;
@@ -187,6 +195,88 @@
             left: -7em;
             top: 0em;
           }
+        }
+      }
+    }
+  }
+}
+
+// Wide break point
+@media (max-width:$high-tide) {
+  .app {
+    //padding: ($general_padding / 2);
+    padding: $general_padding;
+    .hero {
+      display: none;
+    }
+    .hero--lowtide {
+      .sociallinks {
+        float: right;
+        a {
+          margin-right: 1em;
+        }
+      }
+      .alexei--avatar {
+        width: 2em;
+        height: 2em;
+        background-size: 100% 100%;
+        display: block;
+        background-image: url(/dist/assets/alexeiwhite.svg);
+        background-color: $clr_lightborder;
+        border-radius: 20px;
+      }
+      .pubs {
+        margin-top: 2em;
+        a {
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    .hero--content {
+      clear: both;
+      text-align: center;
+      h1 {
+        font-size: 2.2em;
+        padding-top: 2.5em;
+        font-family: $serif_font;
+      }
+      h2 {
+        padding-top: 0.5em;
+        font-size: 1.2em;
+        color: $clr_greenaccent;
+      }
+      .design--space {
+        background-image: url('/dist/assets/comps.svg');
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-size: 33em 10em;
+        height: 12em;
+      }
+    }
+    .main {
+      clear: both;
+      .main--content {
+        .project--badge {
+          max-width: 999em !important;
+        }
+        p,
+        div.p {
+          line-height: 1.5em;
+          color: $clr_greydark;
+          font-family: $serif_font;
+          font-weight: 300;
+          color: $clr_lighttext;
+          position: relative;
+          &.main--content-heading {
+            color: #000;
+            font-size: 1.4em;
+            margin-bottom: 1.5em;
+          }
+        }
+        .wide {
+          display: none;
         }
       }
     }
